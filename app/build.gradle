@@ -1,0 +1,95 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+def static releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+def loadSigningConfigs() {
+    Properties props = new Properties()
+    def propFile = file('../signing.properties')
+    if (propFile.canRead()) {
+        props.load(new FileInputStream(propFile))
+        if (props != null && props.containsKey('RELEASE_STORE_FILE') && props.containsKey('RELEASE_STORE_PASSWORD') &&
+                props.containsKey('RELEASE_KEY_ALIAS') && props.containsKey('RELEASE_KEY_PASSWORD')) {
+            android.signingConfigs.release.storeFile = file(props['RELEASE_STORE_FILE'])
+            android.signingConfigs.release.storePassword = props['RELEASE_STORE_PASSWORD']
+            android.signingConfigs.release.keyAlias = props['RELEASE_KEY_ALIAS']
+            android.signingConfigs.release.keyPassword = props['RELEASE_KEY_PASSWORD']
+        } else {
+            android.buildTypes.release.signingConfig = null
+        }
+    } else {
+        android.buildTypes.release.signingConfig = null
+    }
+}
+
+android {
+    namespace 'com.pax.connectbase'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.pax.connectbase"
+        minSdkVersion 24
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0" + "_" + releaseTime()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    //签名
+    signingConfigs {
+        debug {
+        }
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            loadSigningConfigs()
+            //签名
+            signingConfig signingConfigs.release
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                outputFileName = "ConnectBase_V" +
+                        defaultConfig.versionName + "_" +
+                        output.baseName + ".apk"
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //implementation('com.journeyapps:zxing-android-embedded:3.6.0') { transitive = false }
+    //implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+}

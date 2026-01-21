@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#6200EE"
+            app:titleTextColor="@color/white"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Scan"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_result"/>
+
+    <TextView
+        android:id="@+id/tv_bluetooth_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bluetooth Name:"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_test"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/text_size_name"/>
+
+    <TextView
+        android:id="@+id/tv_bluetooth_name_v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_bluetooth_name"
+        app:layout_constraintStart_toEndOf="@id/tv_bluetooth_name"
+        android:textSize="@dimen/text_size_name"/>
+
+    <TextView
+        android:id="@+id/tv_bluetooth_pair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bluetooth Connection:"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_bluetooth_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/text_size_name"/>
+
+    <TextView
+        android:id="@+id/tv_bluetooth_pair_v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_bluetooth_pair"
+        app:layout_constraintStart_toEndOf="@id/tv_bluetooth_pair"
+        android:textSize="@dimen/text_size_name"/>
+
+    <TextView
+        android:id="@+id/tv_wifi_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Base WIFI Name:"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_bluetooth_pair"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/text_size_name"/>
+
+    <TextView
+        android:id="@+id/tv_wifi_name_v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_wifi_name"
+        app:layout_constraintStart_toEndOf="@id/tv_wifi_name"
+        android:textSize="@dimen/text_size_name"/>
+
+    <TextView
+        android:id="@+id/tv_wifi_conn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WIFI Connection:"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_wifi_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/text_size_name"/>
+
+    <TextView
+        android:id="@+id/tv_wifi_conn_v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_wifi_conn"
+        app:layout_constraintStart_toEndOf="@id/tv_wifi_conn"
+        android:textSize="@dimen/text_size_name"/>
+
+    <TextView
+        android:id="@+id/tv_dns_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_wifi_conn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/text_size_name"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

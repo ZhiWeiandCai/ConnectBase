@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ConnectBase</string>
+
+    <string name="title_scanner">Scanner</string>
+    <string name="scan_text">Align QR code/barcode within frame to scan</string>
+    <string name="manual_input">Input</string>
+</resources>

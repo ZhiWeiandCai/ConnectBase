@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_header"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/space_height_more_larger"
+    android:layout_alignParentTop="true"
+    android:elevation="@dimen/header_elevation_height"
+    android:background="@drawable/actionbar_background_color">
+
+    <ImageView
+        android:id="@+id/header_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/space_left_and_right"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:paddingTop="@dimen/header_layout_arrow_padding"
+        android:paddingRight="@dimen/header_layout_arrow_padding"
+        android:paddingBottom="@dimen/header_layout_arrow_padding"
+        android:src="@drawable/back_icon" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/space_left_and_right_largest"
+        android:text="@string/title_scanner"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
+    <Button
+        android:id="@+id/header_manual_input"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/space_left_and_right"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/white"
+        android:background="@color/special_header_layout_color"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:text="@string/manual_input" />
+</RelativeLayout>

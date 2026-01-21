@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_result">20sp</dimen>
+    <dimen name="text_size_name">18sp</dimen>
+
+    <dimen name="space_height_more_larger">56dp</dimen>
+    <dimen name="header_elevation_height">4dp</dimen>
+
+    <dimen name="space_left_and_right">16dp</dimen>
+    <dimen name="space_left_and_right_largest">72dp</dimen>
+
+    <dimen name="header_layout_arrow_padding">10dp</dimen>
+</resources>
