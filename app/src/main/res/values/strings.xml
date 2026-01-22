@@ -4,4 +4,12 @@
     <string name="title_scanner">Scanner</string>
     <string name="scan_text">Align QR code/barcode within frame to scan</string>
     <string name="manual_input">Input</string>
+
+    <string-array name="questions">
+        <item>What is your favourite color?</item>
+        <item>What is your favourite food?</item>
+        <item>What is your favourite pet`s name?</item>
+        <item>What is your favourite coffee?</item>
+        <item>Why Kotlin?</item>
+    </string-array>
 </resources>

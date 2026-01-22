@@ -4,4 +4,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="special_header_layout_color">#181818</color>
+
+    <color name="md_blue_200">#FF0099CC</color>
+    <color name="white_93">#FF939393</color>
+    <color name="white_70">#FF707070</color>
+    <color name="background800">#FF808080</color>
 </resources>

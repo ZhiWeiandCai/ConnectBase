@@ -33,6 +33,7 @@ import com.pax.baselink.api.BaseLinkApi
 import com.pax.baselink.api.BaseResp
 import com.pax.baselink.listener.IBluetoothDevice
 import com.pax.baselink.listener.IBluetoothSearchListener
+import com.pax.connectbase.dropdspin.TestDdsActivity
 import com.pax.connectbase.scanner.zxing.ZxingScanner
 import com.pax.connectbase.util.BuletoothUtil
 import com.pax.connectbase.util.LogUtils
@@ -69,9 +70,12 @@ class MainActivity : AppCompatActivity() {
         tvTest.setOnClickListener {
             //第一步：通过扫条码方式，获取到底座的SN
             //scanQrByZxing()
-            val testDnsList = BuletoothUtil.get4gDnsServers(baseContext)
+            //------test dns
+            /*val testDnsList = BuletoothUtil.get4gDnsServers(baseContext)
             Log.w(TAG, "testDnsList=" + testDnsList.joinToString())
-            tvDnsTest.text = testDnsList.joinToString()
+            tvDnsTest.text = testDnsList.joinToString()*/
+            //------test dropdown spinner
+            startActivity(Intent(this, TestDdsActivity::class.java))
         }
         tvBlueName = findViewById(R.id.tv_bluetooth_name_v)
         tvBlueConn = findViewById(R.id.tv_bluetooth_pair_v)
