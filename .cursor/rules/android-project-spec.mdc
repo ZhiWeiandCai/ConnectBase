@@ -1,0 +1,15 @@
+---
+description: Android 项目规格说明、描述、编码规范
+alwaysApply: true
+---
+
+# Android 项目现状描述
+
+- **项目名称**：ConnectBase
+- **包名**：com.pax.connectbase
+- **开发语言**：Kotlin、Java
+- **最低支持 Android 版本**：API 24 (Android 7.0)
+- **目标编译版本**：API 28 (Android 9)
+- **项目描述**：这是一个Android一些功能的debug demo项目，用于单元功能测试、开发研究、api调试等。
+- **关键依赖**：使用较新的稳定版 AndroidX 库（AppCompat, ConstraintLayout）。
+- **代码规范**：所有类和方法必须有清晰的 JavaDoc 注释。使用项目中的 `LogUtils`、 `Log.d()` 等进行调试，`Toast` 进行用户提示。
